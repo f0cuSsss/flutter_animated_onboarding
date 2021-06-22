@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_welcome_screen/behaviors/NoneScrollBehavior.dart';
-import 'package:flutter_welcome_screen/on_board_screen.dart';
+import 'package:flutter_welcome_screen/screens/onboard/onboard_screen.dart';
 
 void main() {
   runApp(
@@ -11,3 +11,13 @@ void main() {
     ),
   );
 }
+
+  // ========= DARK THEME ==========
+  // #15131C - background
+  // #1F1E27 - secondary
+
+
+  // ========= NIGHT BLUE THEME ========
+  // #0E314F - background
+  // #2147A1 - secondary
+  // #286AA8 - third
