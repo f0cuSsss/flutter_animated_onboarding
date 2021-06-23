@@ -52,18 +52,4 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
       ),
     );
   }
-
-  Widget _renderThemePage() {
-    return Container(
-      child: Column(
-        children: [
-          Expanded(
-            child: SvgPicture.asset(
-              'assets/onboarding/us.svg',
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 }
