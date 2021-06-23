@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_welcome_screen/behaviors/NoneScrollBehavior.dart';
+import 'package:flutter_welcome_screen/screens/onboard/onboard_bottom_block.dart';
 
 class ThemeItem {
   final id;
@@ -10,9 +11,11 @@ class ThemeItem {
 }
 
 class OnboardThemeScreen extends StatefulWidget {
-  OnboardThemeScreen({Key? key, this.pageController}) : super(key: key);
+  OnboardThemeScreen({Key? key, this.pageController, this.pageCount})
+      : super(key: key);
 
   var pageController;
+  var pageCount;
 
   @override
   State<OnboardThemeScreen> createState() => _OnboardThemeScreenState();
@@ -43,30 +46,36 @@ class _OnboardThemeScreenState extends State<OnboardThemeScreen> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 20, top: 70, left: 30, right: 30),
+      padding: const EdgeInsets.only(top: 70, bottom: 5, left: 5, right: 5),
       // bottom: MediaQuery.of(context).size.height * 0.1),
       child: Column(
         children: [
-          Text(
-            'Pick an application theme!',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Color(0xFF03002D),
-              fontFamily: 'Roboto',
-              fontSize: 36,
-              fontWeight: FontWeight.w900,
-              height: 1.5,
-              letterSpacing: 0.5,
+          Padding(
+            padding: const EdgeInsets.only(left: 30, right: 30),
+            child: Text(
+              'Pick an application theme!',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Color(0xFF03002D),
+                fontFamily: 'Roboto',
+                fontSize: 36,
+                fontWeight: FontWeight.w900,
+                height: 1.5,
+                letterSpacing: 0.5,
+              ),
             ),
           ),
           SizedBox(height: 60),
           Expanded(
             child: ScrollConfiguration(
               behavior: NoneScrollBehavior(),
-              child: ListView(
-                children: List.generate(
-                  themes.length,
-                  (index) => _themeItem(themes[index]),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 30, right: 30),
+                child: ListView(
+                  children: List.generate(
+                    themes.length,
+                    (index) => _themeItem(themes[index]),
+                  ),
                 ),
               ),
             ),
@@ -74,64 +83,11 @@ class _OnboardThemeScreenState extends State<OnboardThemeScreen> {
           // SizedBox(height: 30),
           // Text('You will be able to change the theme in the app settings.'),
           SizedBox(height: 30),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              // NEED TO REFACTOR!!!
-              Expanded(
-                child: Ink(
-                  decoration: ShapeDecoration(
-                    shape: CircleBorder(),
-                    color: Color(0xFF6338F2),
-                  ),
-                  padding: EdgeInsets.all(10),
-                  child: IconButton(
-                    iconSize: 24,
-                    color: Color(0xFF8093F1),
-                    icon: Icon(
-                      Icons.arrow_back,
-                      color: Colors.white,
-                    ),
-                    onPressed: () =>
-                        (widget.pageController as PageController).previousPage(
-                      duration: const Duration(milliseconds: 350),
-                      curve: Curves.easeInToLinear,
-                    ),
-                  ),
-                ),
-              ),
-              Expanded(child: Text('')),
-              Expanded(
-                child: Ink(
-                  decoration: ShapeDecoration(
-                    shape: CircleBorder(),
-                    color: Color(0xFF6338F2),
-                  ),
-                  padding: EdgeInsets.all(10),
-                  child: IconButton(
-                    iconSize: 24,
-                    // iconSize: 34,
-                    // color: Colors.black.withOpacity(0.7),
-                    // color: Color(0xFF8093F1),
-                    icon: Icon(
-                      Icons.arrow_forward,
-                      color: Colors.white,
-                      // color: Colors.black.withOpacity(0.7),
-                    ),
-                    onPressed: selectedTheme.id != -1
-                        ? () {
-                            widget.pageController.nextPage(
-                              duration: const Duration(milliseconds: 350),
-                              curve: Curves.easeInToLinear,
-                            );
-                          }
-                        : null,
-                  ),
-                ),
-              ),
-            ],
+          OnboardBottomBlock(
+            pageController: widget.pageController,
+            pageCount: widget.pageCount,
+            curPage: 1,
           ),
-          SizedBox(height: 30),
         ],
       ),
     );

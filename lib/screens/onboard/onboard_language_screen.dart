@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_welcome_screen/behaviors/NoneScrollBehavior.dart';
+import 'package:flutter_welcome_screen/screens/onboard/onboard_bottom_block.dart';
 
 class LanguageItem {
   final id;
@@ -11,9 +12,11 @@ class LanguageItem {
 }
 
 class OnboardLanguageScreen extends StatefulWidget {
-  OnboardLanguageScreen({Key? key, this.pageController}) : super(key: key);
+  OnboardLanguageScreen({Key? key, this.pageController, this.pageCount})
+      : super(key: key);
 
   var pageController;
+  var pageCount;
 
   @override
   State<OnboardLanguageScreen> createState() => _OnboardLanguageScreenState();
@@ -56,7 +59,7 @@ class _OnboardLanguageScreenState extends State<OnboardLanguageScreen> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 20, top: 70, left: 30, right: 30),
+      padding: const EdgeInsets.only(top: 70, bottom: 5, left: 5, right: 5),
       // bottom: MediaQuery.of(context).size.height * 0.1),
       child: Column(
         children: [
@@ -76,69 +79,24 @@ class _OnboardLanguageScreenState extends State<OnboardLanguageScreen> {
           Expanded(
             child: ScrollConfiguration(
               behavior: NoneScrollBehavior(),
-              child: ListView(
-                children: List.generate(
-                  languages.length,
-                  (index) => _languageItem(languages[index]),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: ListView(
+                  children: List.generate(
+                    languages.length,
+                    (index) => _languageItem(languages[index]),
+                  ),
                 ),
               ),
             ),
           ),
           // Text('You will be able to change the language in the app settings.'),
           SizedBox(height: 30),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              // NEED TO REFACTOR!!!
-              Expanded(
-                child: IconButton(
-                  iconSize: 24,
-                  splashColor: (() {
-                    return widget.pageController.initialPage == 0
-                        ? Colors.transparent
-                        : Color(0xFF8093F1);
-                  }()),
-                  highlightColor: Colors.transparent,
-                  color: (() {
-                    return widget.pageController.initialPage == 0
-                        ? Colors.transparent
-                        : Color(0xFF8093F1);
-                  }()),
-                  icon: Icon(
-                    Icons.arrow_back,
-                  ),
-                  onPressed: () => print('Prev slide'),
-                ),
-              ),
-              Expanded(child: Text('')),
-              Expanded(
-                child: Ink(
-                  decoration: ShapeDecoration(
-                    shape: CircleBorder(),
-                    color: Color(0xFF6338F2),
-                  ),
-                  padding: EdgeInsets.all(10),
-                  child: IconButton(
-                    iconSize: 24,
-                    color: Color(0xFF8093F1),
-                    icon: Icon(
-                      Icons.arrow_forward,
-                      color: Colors.white,
-                    ),
-                    onPressed: selectedLanguage.id != -1
-                        ? () {
-                            widget.pageController.nextPage(
-                              duration: const Duration(milliseconds: 350),
-                              curve: Curves.easeInToLinear,
-                            );
-                          }
-                        : null,
-                  ),
-                ),
-              ),
-            ],
+          OnboardBottomBlock(
+            pageController: widget.pageController,
+            pageCount: widget.pageCount,
+            curPage: 0,
           ),
-          SizedBox(height: 30),
         ],
       ),
     );
