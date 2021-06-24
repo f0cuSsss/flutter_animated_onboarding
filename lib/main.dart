@@ -34,3 +34,6 @@ void main() {
   // #0E314F - background
   // #2147A1 - secondary
   // #286AA8 - third
+
+  // APP THEMES
+  // https://resocoder.com/2019/08/09/switch-themes-with-flutter-bloc-dynamic-theming-tutorial-dark-light-theme/
