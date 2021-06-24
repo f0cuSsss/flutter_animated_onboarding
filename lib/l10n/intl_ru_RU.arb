@@ -1,0 +1,31 @@
+{
+    "language_screen_title": "Выберите язык, пожалуйста!",
+    "language_screen_english": "Английский",
+    "language_screen_german": "Немецкий",
+    "language_screen_russian": "Русский",
+    "language_screen_ukrainian": "Украинский",
+    
+    "theme_screen_title": "Выберите цветовую тему приложения!",
+    "theme_screen_light": "Светлая",
+    "theme_screen_dark": "Тёмная",
+
+    "welcome_screen_title": "Добро пожаловать!",
+    "welcome_screen_description": "Lorem Ipsum - это просто фиктивный текст в полиграфической и наборной индустрии. Lorem Ipsum является стандартным фиктивным текстом в индустрии с 1500-х годов. Lorem Ipsum был стандартным фиктивным текстом в индустрии с 1500-х годов. Lorem Ipsum был стандартным фиктивным текстом в отрасли с 1500-х годов.",
+
+    "func_overview_screen_title": "Функциональный обзор",
+    "func_overview_screen_description": "Lorem Ipsum - это просто фиктивный текст в полиграфической и наборной индустрии. Lorem Ipsum является стандартным фиктивным текстом в индустрии с 1500-х годов. Lorem Ipsum был стандартным фиктивным текстом в индустрии с 1500-х годов. Lorem Ipsum был стандартным фиктивным текстом в отрасли с 1500-х годов.",
+
+    "func_first_screen_title": "Функционал 1",
+    "func_first_screen_description": "Он пережил не только пять веков, но и скачок в электронном предложении.",
+
+    "func_second_screen_title": "Функционал 2",
+    "func_second_screen_description": "Lorem Ipsum - это просто фиктивный текст индустрии печати и набора, которая стала Lorem Ipsum.",
+
+    "func_third_screen_title": "Функционал 3",
+    "func_third_screen_description": "Доступно множество вариаций отрывков Lorem Ipsum, но большинство из них претерпело изменения в той или иной форме из-за добавленного юмора или случайных слов, которые даже немного не выглядят правдоподобными.",
+
+    "getstarted_screen_title": "Название проекта",
+    "getstarted_screen_btn_text": "Начать!",
+
+    "skip": "ПРОПУСТИТЬ"
+}

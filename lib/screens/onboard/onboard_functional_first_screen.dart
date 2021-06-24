@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_welcome_screen/behaviors/NoneScrollBehavior.dart';
 import 'package:flutter_welcome_screen/screens/onboard/onboard_bottom_block.dart';
+
+import 'package:flutter_welcome_screen/generated/l10n.dart';
 
 class OnboardFunctionalFirstScreen extends StatelessWidget {
   OnboardFunctionalFirstScreen({this.pageController, this.pageCount});
@@ -22,7 +25,7 @@ class OnboardFunctionalFirstScreen extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              'SKIP',
+              S.of(context).skip,
               style: TextStyle(
                 color: Colors.black.withOpacity(0.5),
                 fontWeight: FontWeight.w500,
@@ -43,7 +46,7 @@ class OnboardFunctionalFirstScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 30, right: 30),
               child: Text(
-                'Functional 1',
+                S.of(context).func_first_screen_title,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Color(0xFF03002D),
@@ -55,16 +58,22 @@ class OnboardFunctionalFirstScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Expanded(
                 child: Padding(
               padding: const EdgeInsets.all(16.0),
-              child: Text(
-                'It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
-                style: TextStyle(fontSize: 18),
+              child: ScrollConfiguration(
+                behavior: NoneScrollBehavior(),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.vertical,
+                  child: Text(
+                    S.of(context).func_first_screen_description,
+                    style: const TextStyle(fontSize: 18),
+                  ),
+                ),
               ),
             )),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             OnboardBottomBlock(
               pageController: pageController,
               pageCount: pageCount,

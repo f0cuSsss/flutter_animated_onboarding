@@ -24,7 +24,8 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFEFF3F8),
+      // backgroundColor: Color(0xFF0E314F), // dark
+      backgroundColor: Color(0xFFEFF3F8), // light
       body: SafeArea(
         child: Container(
           child: PageView(

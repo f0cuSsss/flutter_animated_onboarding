@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_welcome_screen/behaviors/NoneScrollBehavior.dart';
 import 'package:flutter_welcome_screen/screens/onboard/onboard_bottom_block.dart';
+
+import 'package:flutter_welcome_screen/generated/l10n.dart';
 
 class OnboardWelcomeScreen extends StatelessWidget {
   OnboardWelcomeScreen({this.pageController, this.pageCount});
@@ -23,28 +26,34 @@ class OnboardWelcomeScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 30, right: 30),
             child: Text(
-              'Welcome!',
+              S.of(context).welcome_screen_title,
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Color(0xFF03002D),
                 fontFamily: 'Roboto',
                 fontSize: 36,
                 fontWeight: FontWeight.w900,
-                height: 1.5,
+                height: 1.2,
                 letterSpacing: 0.5,
               ),
             ),
           ),
-          SizedBox(height: 30),
+          const SizedBox(height: 20),
           Expanded(
               child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
-              'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.',
-              style: TextStyle(fontSize: 18),
+            padding: EdgeInsets.all(16.0),
+            child: ScrollConfiguration(
+              behavior: NoneScrollBehavior(),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Text(
+                  S.of(context).welcome_screen_description,
+                  style: TextStyle(fontSize: 18),
+                ),
+              ),
             ),
           )),
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
           OnboardBottomBlock(
             pageController: pageController,
             pageCount: pageCount,

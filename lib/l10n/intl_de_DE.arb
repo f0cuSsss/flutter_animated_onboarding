@@ -1,0 +1,31 @@
+{
+    "language_screen_title": "Wählen Sie eine Sprache, bitte!",
+    "language_screen_english": "Englisch",
+    "language_screen_german": "Deutsche",
+    "language_screen_russian": "Russisch",
+    "language_screen_ukrainian": "Ukrainisch",
+    
+    "theme_screen_title": "Wählen Sie ein Anwendungsthema!",
+    "theme_screen_light": "Licht",
+    "theme_screen_dark": "Dunkel",
+
+    "welcome_screen_title": "Herzlich Willkommen!",
+    "welcome_screen_description": "Lorem Ipsum ist einfach Dummy-Text der Druck- und Satzindustrie. Lorem Ipsum ist seit den 1500er Jahren der branchenübliche Dummy-Text. Lorem Ipsum ist einfach Dummy-Text der Druck- und Satzindustrie. Lorem Ipsum ist seit den 1500er Jahren der branchenübliche Dummy-Text.",
+
+    "func_overview_screen_title": "Funktionsübersicht",
+    "func_overview_screen_description": "Lorem Ipsum ist einfach Dummy-Text der Druck- und Satzindustrie. Lorem Ipsum ist seit den 1500er Jahren der branchenübliche Dummy-Text. Lorem Ipsum ist einfach Dummy-Text der Druck- und Satzindustrie. Lorem Ipsum ist seit den 1500er Jahren der branchenübliche Dummy-Text.",
+
+    "func_first_screen_title": "Funktional 1",
+    "func_first_screen_description": "Es hat nicht nur fünf Jahrhunderte überlebt, sondern auch den Sprung in den elektronischen Satz.",
+
+    "func_second_screen_title": "Funktional 2",
+    "func_second_screen_description": "Lorem Ipsum ist einfach Dummy-Text der Druck- und Satzindustrie, Lorem Ipsum wurde.",
+
+    "func_third_screen_title": "Funktional 3",
+    "func_third_screen_description": "Es gibt viele Variationen von Passagen von Lorem Ipsum zur Verfügung, aber die Mehrheit haben gelitten.",
+
+    "getstarted_screen_title": "Projektname",
+    "getstarted_screen_btn_text": "Beginnen!",
+
+    "skip": "ÜBERSPRINGEN"
+}

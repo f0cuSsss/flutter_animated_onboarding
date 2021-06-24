@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_welcome_screen/behaviors/NoneScrollBehavior.dart';
 import 'package:flutter_welcome_screen/screens/onboard/onboard_bottom_block.dart';
+
+import 'package:flutter_welcome_screen/generated/l10n.dart';
 
 class OnboardFunctionalSecondScreen extends StatelessWidget {
   OnboardFunctionalSecondScreen({this.pageController, this.pageCount});
@@ -22,7 +25,7 @@ class OnboardFunctionalSecondScreen extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              'SKIP',
+              S.of(context).skip,
               style: TextStyle(
                 color: Colors.black.withOpacity(0.5),
                 fontWeight: FontWeight.w500,
@@ -40,13 +43,13 @@ class OnboardFunctionalSecondScreen extends StatelessWidget {
               fit: BoxFit.fill,
               height: MediaQuery.of(context).size.height * 0.3,
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Padding(
               padding: const EdgeInsets.only(left: 30, right: 30),
               child: Text(
-                'Functional 2',
+                S.of(context).func_second_screen_title,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Color(0xFF03002D),
                   fontFamily: 'Roboto',
                   fontSize: 36,
@@ -56,16 +59,22 @@ class OnboardFunctionalSecondScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Expanded(
                 child: Padding(
               padding: const EdgeInsets.all(16.0),
-              child: Text(
-                'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English.',
-                style: TextStyle(fontSize: 18),
+              child: ScrollConfiguration(
+                behavior: NoneScrollBehavior(),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.vertical,
+                  child: Text(
+                    S.of(context).func_second_screen_description,
+                    style: const TextStyle(fontSize: 18),
+                  ),
+                ),
               ),
             )),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             OnboardBottomBlock(
               pageController: pageController,
               pageCount: pageCount,

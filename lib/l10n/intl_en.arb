@@ -1,0 +1,31 @@
+{
+    "language_screen_title": "Choose a language, please!",
+    "language_screen_english": "English",
+    "language_screen_german": "German",
+    "language_screen_russian": "Russian",
+    "language_screen_ukrainian": "Ukrainian",
+    
+    "theme_screen_title": "Choose an application theme!",
+    "theme_screen_light": "Light",
+    "theme_screen_dark": "Dark",
+
+    "welcome_screen_title": "Welcome!",
+    "welcome_screen_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+
+    "func_overview_screen_title": "Functional overview",
+    "func_overview_screen_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+
+    "func_first_screen_title": "Functional 1",
+    "func_first_screen_description": "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+
+    "func_second_screen_title": "Functional 2",
+    "func_second_screen_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+
+    "func_third_screen_title": "Functional 3",
+    "func_third_screen_description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
+
+    "getstarted_screen_title": "Project title",
+    "getstarted_screen_btn_text": "Get started!",
+
+    "skip": "SKIP"
+}
