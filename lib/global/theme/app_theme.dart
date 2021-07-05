@@ -7,11 +7,11 @@ enum AppTheme {
 
 final appThemeData = {
   AppTheme.Light: ThemeData(
-    brightness: Brightness.light,
-    primaryColor: Colors.green,
-  ),
+      brightness: Brightness.light,
+      primaryColor: Colors.green,
+      fontFamily: 'IBM Plex Sans'),
   AppTheme.Dark: ThemeData(
-    brightness: Brightness.dark,
-    primaryColor: Colors.green[700],
-  )
+      brightness: Brightness.dark,
+      primaryColor: Colors.green[700],
+      fontFamily: 'IBM Plex Sans')
 };

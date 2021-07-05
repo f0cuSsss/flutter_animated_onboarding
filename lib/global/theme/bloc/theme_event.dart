@@ -1,8 +1,9 @@
 part of 'theme_bloc.dart';
 
-@immutable
-abstract class ThemeEvent extends Equatable {
-  const ThemeEvent();
+// abstract class ThemeEvent extends Equatable {
+class ThemeEvent extends Equatable {
+  ThemeEvent();
+  // const ThemeEvent();
 
   @override
   List<Object> get props => [];
