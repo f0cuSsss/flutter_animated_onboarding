@@ -15,3 +15,8 @@ final appThemeData = {
       primaryColor: Colors.green[700],
       fontFamily: 'IBM Plex Sans')
 };
+
+ThemeData appThemeLight = ThemeData(
+    brightness: Brightness.dark,
+    primaryColor: Colors.green,
+    fontFamily: 'IBM Plex Sans');

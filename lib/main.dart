@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-// import 'package:flutter_welcome_screen/behaviors/NoneScrollBehavior.dart';
+
+import 'global/theme/app_theme.dart';
+import 'global/theme/bloc/theme_bloc.dart';
+// import 'package:flutter_bloc/flutter_bloc.dart';
+// // import 'package:flutter_welcome_screen/behaviors/NoneScrollBehavior.dart';
 import 'package:flutter_welcome_screen/screens/onboard/onboard_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_welcome_screen/generated/l10n.dart';
 
-import 'global/theme/app_theme.dart';
-import 'global/theme/bloc/theme_bloc.dart';
+// import 'global/theme/app_theme.dart';
+// import 'global/theme/bloc/theme_bloc.dart';
 
 void main() => runApp(App());
 
@@ -14,10 +18,10 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // final w = ThemeBloc(initialState: appThemeData[AppTheme.Light]);
-    ThemeData state = appThemeData[AppTheme.Light];
+    // ThemeData state = appThemeData[AppTheme.Light];
 
-    return BlocProvider(
-      create: (context) => ThemeBloc(state),
+    return BlocProvider<ThemeBloc>(
+      create: (_) => ThemeBloc(),
       // create: (context) => appThemeData[AppTheme.Light],
       child: BlocBuilder<ThemeBloc, ThemeState>(
         builder: _buildWithTheme,

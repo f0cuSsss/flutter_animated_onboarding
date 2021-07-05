@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_welcome_screen/behaviors/NoneScrollBehavior.dart';
+import 'package:flutter_welcome_screen/global/theme/app_theme.dart';
+import 'package:flutter_welcome_screen/global/theme/bloc/theme_bloc.dart';
 import 'package:flutter_welcome_screen/screens/onboard/onboard_bottom_block.dart';
 
 import 'package:flutter_welcome_screen/generated/l10n.dart';
