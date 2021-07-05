@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_welcome_screen/behaviors/NoneScrollBehavior.dart';
 import 'package:flutter_welcome_screen/screens/onboard/onboard_functional_overview_screen.dart';
 import 'package:flutter_welcome_screen/screens/onboard/onboard_functional_first_screen.dart';
 import 'package:flutter_welcome_screen/screens/onboard/onboard_functional_second_screen.dart';
@@ -24,13 +22,12 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Color(0xFF0E314F), // dark
-      backgroundColor: Color(0xFFEFF3F8), // light
+      backgroundColor: Theme.of(context).backgroundColor,
       body: SafeArea(
         child: Container(
           child: PageView(
             controller: pageController,
-            physics: NeverScrollableScrollPhysics(),
+            physics: const NeverScrollableScrollPhysics(),
             children: [
               OnboardLanguageScreen(
                   pageController: pageController, pageCount: 8),

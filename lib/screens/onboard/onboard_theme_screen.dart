@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_welcome_screen/behaviors/NoneScrollBehavior.dart';
+import 'package:flutter_welcome_screen/global/theme/app_theme.dart';
+import 'package:flutter_welcome_screen/global/theme/bloc/theme_bloc.dart';
 import 'package:flutter_welcome_screen/screens/onboard/onboard_bottom_block.dart';
 
 import 'package:flutter_welcome_screen/generated/l10n.dart';
@@ -37,14 +40,7 @@ class _OnboardThemeScreenState extends State<OnboardThemeScreen> {
             child: Text(
               S.of(context).theme_screen_title,
               textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Color(0xFF03002D),
-                fontFamily: 'Roboto',
-                fontSize: 36,
-                fontWeight: FontWeight.w900,
-                height: 1.5,
-                letterSpacing: 0.5,
-              ),
+              style: Theme.of(context).textTheme.headline1,
             ),
           ),
           const SizedBox(height: 60),
@@ -55,14 +51,20 @@ class _OnboardThemeScreenState extends State<OnboardThemeScreen> {
                 padding: const EdgeInsets.only(left: 30, right: 30),
                 child: ListView(
                   children: [
-                    _themeItem(ThemeItem(
-                      id: 1,
-                      name: S.of(context).theme_screen_light,
-                    )),
-                    _themeItem(ThemeItem(
-                      id: 2,
-                      name: S.of(context).theme_screen_dark,
-                    )),
+                    _themeItem(
+                      ThemeItem(
+                        id: 1,
+                        name: S.of(context).theme_screen_light,
+                      ),
+                      AppTheme.Light,
+                    ),
+                    _themeItem(
+                      ThemeItem(
+                        id: 2,
+                        name: S.of(context).theme_screen_dark,
+                      ),
+                      AppTheme.Dark,
+                    ),
                   ],
                 ),
               ),
@@ -80,12 +82,14 @@ class _OnboardThemeScreenState extends State<OnboardThemeScreen> {
     );
   }
 
-  Widget _themeItem(ThemeItem item) {
+  Widget _themeItem(ThemeItem item, AppTheme theme) {
     return GestureDetector(
       onTap: () {
         setState(() {
           selectedTheme = item.id;
         });
+        print(theme);
+        BlocProvider.of<ThemeBloc>(context).add(ThemeChanged(theme: theme));
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 12),

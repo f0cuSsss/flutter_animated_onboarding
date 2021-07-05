@@ -41,14 +41,7 @@ class _OnboardLanguageScreenState extends State<OnboardLanguageScreen> {
           Text(
             S.of(context).language_screen_title,
             textAlign: TextAlign.center,
-            style: const TextStyle(
-              color: Color(0xFF03002D),
-              fontFamily: 'Roboto',
-              fontSize: 36,
-              fontWeight: FontWeight.w900,
-              height: 1.5,
-              letterSpacing: 0.5,
-            ),
+            style: Theme.of(context).textTheme.headline1,
           ),
           const SizedBox(height: 40),
           Expanded(

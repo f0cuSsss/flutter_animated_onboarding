@@ -12,16 +12,41 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
   ThemeBloc() : super(ThemeInitial());
 
   @override
-  ThemeState get initialState => ThemeState(themeData: appThemeLight);
+  ThemeState get initialState =>
+      // ThemeState(themeData: appThemeData[AppTheme.Dark] ?? appThemeDark);
+      // ThemeState(themeData: appThemeData[AppTheme.Light] ?? appThemeLight);
+      ThemeState(themeData: appThemeLight);
 
   @override
   Stream<ThemeState> mapEventToState(
     ThemeEvent event,
   ) async* {
-    // yield ThemeState(themeData: themeData)
     if (event is ThemeChanged) {
-      print(event);
-      yield ThemeState(themeData: appThemeLight);
+      // final ThemeState newTheme =
+      //     ThemeState(themeData: appThemeData[event.theme] ?? appThemeLight);
+      // newTheme.themeData = initialState.themeData;
+      // newTheme.themeData = appThemeData[event.theme] ?? appThemeLight;
+      // yield newTheme;
+      print('[bloc] ${event.theme}');
+
+      // switch (event.theme) {
+      //   case AppTheme.Light:
+      //     print('light');
+      //     ThemeState newState = initialState;
+      //     newState.themeData = appThemeData[event.theme] ?? appThemeLight;
+      //     yield newState;
+      //     break;
+      //   case AppTheme.Dark:
+      //     print('dark');
+      //     ThemeState newState = initialState;
+      //     initialState.themeData = appThemeData[event.theme] ?? appThemeDark;
+      //     yield newState;
+      //     break;
+      // }
+
+      // yield ThemeState(themeData: event.theme == AppTheme.Light ? appThemeLight : appThemeDark);
+      // yield ThemeState(themeData: appThemeData[event.theme] ?? appThemeLight);
+      yield ThemeState(themeData: appThemeData[event.theme] ?? appThemeDark);
     }
   }
 }
