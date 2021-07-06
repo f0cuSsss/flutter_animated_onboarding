@@ -9,6 +9,7 @@ class OnboardBottomBlock extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Column(
       children: [
         Row(
@@ -19,7 +20,6 @@ class OnboardBottomBlock extends StatelessWidget {
               child: Ink(
                 decoration: ShapeDecoration(
                   shape: CircleBorder(),
-                  // color: curPage == 0 ? null : Color(0xFF8093F1),
                 ),
                 padding: EdgeInsets.all(10),
                 child: IconButton(
@@ -33,7 +33,7 @@ class OnboardBottomBlock extends StatelessWidget {
                     Icons.arrow_back,
                     color: curPage == 0
                         ? Colors.transparent
-                        : Colors.black.withOpacity(0.4),
+                        : theme.colorScheme.onBackground,
                   ),
                   onPressed: curPage == 0
                       ? null
@@ -50,8 +50,8 @@ class OnboardBottomBlock extends StatelessWidget {
                 decoration: ShapeDecoration(
                   shape: CircleBorder(),
                   color: curPage == pageCount - 1
-                      ? Color(0xFFEFF3F8)
-                      : Color(0xFF6338F2),
+                      ? theme.colorScheme.background
+                      : theme.colorScheme.secondary,
                 ),
                 padding: EdgeInsets.all(10),
                 child: IconButton(
@@ -64,7 +64,7 @@ class OnboardBottomBlock extends StatelessWidget {
                     Icons.arrow_forward,
                     color: curPage == pageCount - 1
                         ? Colors.transparent
-                        : Colors.white,
+                        : theme.colorScheme.onSecondary,
                   ),
                   onPressed: curPage == pageCount - 1
                       ? null
@@ -87,8 +87,8 @@ class OnboardBottomBlock extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(5)),
                   color: curPage >= index
-                      ? Color(0xFF6338F2)
-                      : Color(0xFF6338F2).withOpacity(0.25),
+                      ? theme.colorScheme.secondary
+                      : theme.colorScheme.secondary.withOpacity(0.25),
                 ),
                 margin: EdgeInsets.only(right: 3),
                 height: 5,

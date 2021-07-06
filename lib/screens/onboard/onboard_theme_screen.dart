@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_welcome_screen/behaviors/NoneScrollBehavior.dart';
+import 'package:flutter_welcome_screen/global/theme/ThemeNotifier.dart';
 import 'package:flutter_welcome_screen/global/theme/app_theme.dart';
-import 'package:flutter_welcome_screen/global/theme/bloc/theme_bloc.dart';
 import 'package:flutter_welcome_screen/screens/onboard/onboard_bottom_block.dart';
 
 import 'package:flutter_welcome_screen/generated/l10n.dart';
+import 'package:provider/provider.dart';
 
 class ThemeItem {
   final id;
@@ -83,57 +82,60 @@ class _OnboardThemeScreenState extends State<OnboardThemeScreen> {
   }
 
   Widget _themeItem(ThemeItem item, AppTheme theme) {
-    return GestureDetector(
-      onTap: () {
-        setState(() {
-          selectedTheme = item.id;
-        });
-        print(theme);
-        BlocProvider.of<ThemeBloc>(context).add(ThemeChanged(theme: theme));
-      },
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 12),
-        child: Container(
-          decoration: BoxDecoration(
-            color: selectedTheme == item.id
-                ? const Color(0xFF03002D)
-                : Colors.white,
-            borderRadius: const BorderRadius.all(Radius.circular(12)),
-          ),
-          width: double.infinity,
-          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 18),
-          child: Row(
-            children: [
-              Expanded(
-                child: Text(
-                  item.name,
-                  style: TextStyle(
-                    fontSize: 19,
-                    color:
-                        selectedTheme == item.id ? Colors.white : Colors.black,
-                    fontWeight: FontWeight.w400,
+    return Consumer<ThemeNotifier>(
+      builder: (context, notifier, child) => GestureDetector(
+        onTap: () {
+          setState(() {
+            selectedTheme = item.id;
+          });
+          notifier.toggleTheme(theme);
+        },
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 12),
+          child: Container(
+            decoration: BoxDecoration(
+              color: selectedTheme == item.id
+                  ? const Color(0xFF03002D)
+                  : Colors.white,
+              borderRadius: const BorderRadius.all(Radius.circular(12)),
+            ),
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 18),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    item.name,
+                    style: TextStyle(
+                      fontSize: 19,
+                      color: selectedTheme == item.id
+                          ? Colors.white
+                          : Colors.black,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
                 ),
-              ),
-              Container(
-                padding: const EdgeInsets.all(5),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                    width: 1,
-                    color: Colors.grey.withOpacity(0.4),
+                Container(
+                  padding: const EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      width: 1,
+                      color: Colors.grey.withOpacity(0.4),
+                    ),
+                    color: selectedTheme == item.id
+                        ? const Color(0xFF6338F2)
+                        : null,
                   ),
-                  color:
-                      selectedTheme == item.id ? const Color(0xFF6338F2) : null,
+                  child: Icon(
+                    Icons.done,
+                    color: selectedTheme == item.id
+                        ? Colors.white
+                        : Colors.grey.withOpacity(0.4),
+                  ),
                 ),
-                child: Icon(
-                  Icons.done,
-                  color: selectedTheme == item.id
-                      ? Colors.white
-                      : Colors.grey.withOpacity(0.4),
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

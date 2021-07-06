@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_welcome_screen/behaviors/NoneScrollBehavior.dart';
 import 'package:flutter_welcome_screen/global/theme/app_theme.dart';
-import 'package:flutter_welcome_screen/global/theme/bloc/theme_bloc.dart';
 import 'package:flutter_welcome_screen/screens/onboard/onboard_bottom_block.dart';
 
 import 'package:flutter_welcome_screen/generated/l10n.dart';
@@ -97,6 +95,7 @@ class _OnboardLanguageScreenState extends State<OnboardLanguageScreen> {
   }
 
   Widget _languageItem(LanguageItem item) {
+    var theme = Theme.of(context);
     return GestureDetector(
       onTap: () {
         setState(() {
@@ -108,9 +107,11 @@ class _OnboardLanguageScreenState extends State<OnboardLanguageScreen> {
         padding: const EdgeInsets.symmetric(vertical: 12),
         child: Container(
           decoration: BoxDecoration(
-            color:
-                selectedLanguage == item.id ? Color(0xFF03002D) : Colors.white,
-            borderRadius: BorderRadius.all(Radius.circular(12)),
+            color: selectedLanguage == item.id
+                ? theme.primaryColor
+                : theme.colorScheme.surface,
+            // : const Color(0xFF060053),
+            borderRadius: const BorderRadius.all(Radius.circular(12)),
           ),
           width: double.infinity,
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 18),
@@ -128,8 +129,8 @@ class _OnboardLanguageScreenState extends State<OnboardLanguageScreen> {
                   style: TextStyle(
                     fontSize: 19,
                     color: selectedLanguage == item.id
-                        ? Colors.white
-                        : Colors.black,
+                        ? theme.colorScheme.primaryVariant
+                        : theme.colorScheme.primary,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -142,12 +143,14 @@ class _OnboardLanguageScreenState extends State<OnboardLanguageScreen> {
                     width: 1,
                     color: Colors.grey.withOpacity(0.4),
                   ),
-                  color: selectedLanguage == item.id ? Color(0xFF6338F2) : null,
+                  color: selectedLanguage == item.id
+                      ? theme.colorScheme.secondary
+                      : null,
                 ),
                 child: Icon(
                   Icons.done,
                   color: selectedLanguage == item.id
-                      ? Colors.white
+                      ? theme.colorScheme.onSecondary
                       : Colors.grey.withOpacity(0.4),
                 ),
               ),

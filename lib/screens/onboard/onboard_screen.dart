@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_welcome_screen/global/theme/ThemeNotifier.dart';
 
 import 'package:flutter_welcome_screen/screens/onboard/onboard_functional_overview_screen.dart';
 import 'package:flutter_welcome_screen/screens/onboard/onboard_functional_first_screen.dart';
@@ -8,6 +9,7 @@ import 'package:flutter_welcome_screen/screens/onboard/onboard_getting_started_s
 import 'package:flutter_welcome_screen/screens/onboard/onboard_language_screen.dart';
 import 'package:flutter_welcome_screen/screens/onboard/onboard_theme_screen.dart';
 import 'package:flutter_welcome_screen/screens/onboard/onboard_welcome_screen.dart';
+import 'package:provider/provider.dart';
 
 class OnBoardScreen extends StatefulWidget {
   OnBoardScreen({Key? key}) : super(key: key);
