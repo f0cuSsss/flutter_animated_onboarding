@@ -18,6 +18,7 @@ class OnBoardScreen extends StatefulWidget {
 
 class _OnBoardScreenState extends State<OnBoardScreen> {
   final pageController = new PageController();
+  int _pageCount = 8;
 
   @override
   Widget build(BuildContext context) {
@@ -30,20 +31,21 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
             physics: const NeverScrollableScrollPhysics(),
             children: [
               OnboardLanguageScreen(
-                  pageController: pageController, pageCount: 8),
-              OnboardThemeScreen(pageController: pageController, pageCount: 8),
+                  pageController: pageController, pageCount: _pageCount),
+              OnboardThemeScreen(
+                  pageController: pageController, pageCount: _pageCount),
               OnboardWelcomeScreen(
-                  pageController: pageController, pageCount: 8),
+                  pageController: pageController, pageCount: _pageCount),
               OnboardFunctionalOverviewScreen(
-                  pageController: pageController, pageCount: 8),
+                  pageController: pageController, pageCount: _pageCount),
               OnboardFunctionalFirstScreen(
-                  pageController: pageController, pageCount: 8),
+                  pageController: pageController, pageCount: _pageCount),
               OnboardFunctionalSecondScreen(
-                  pageController: pageController, pageCount: 8),
+                  pageController: pageController, pageCount: _pageCount),
               OnboardFunctionalThirdScreen(
-                  pageController: pageController, pageCount: 8),
+                  pageController: pageController, pageCount: _pageCount),
               OnboardGettingStartedScreen(
-                  pageController: pageController, pageCount: 8),
+                  pageController: pageController, pageCount: _pageCount),
             ],
           ),
         ),
