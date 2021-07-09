@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:flutter_welcome_screen/behaviors/NoneScrollBehavior.dart';
 import 'package:flutter_welcome_screen/screens/onboard/onboard_bottom_block.dart';

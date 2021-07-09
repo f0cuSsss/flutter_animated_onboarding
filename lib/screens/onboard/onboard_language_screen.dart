@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_welcome_screen/behaviors/NoneScrollBehavior.dart';
-import 'package:flutter_welcome_screen/global/theme/app_theme.dart';
 import 'package:flutter_welcome_screen/screens/onboard/onboard_bottom_block.dart';
 
 import 'package:flutter_welcome_screen/generated/l10n.dart';
@@ -13,9 +12,16 @@ class LanguageItem {
   final code;
   final country;
 
-  LanguageItem({this.id, this.name, this.path, this.code, this.country});
+  LanguageItem({
+    required this.id,
+    required this.name,
+    required this.path,
+    required this.code,
+    required this.country,
+  });
 }
 
+// ignore: must_be_immutable
 class OnboardLanguageScreen extends StatefulWidget {
   OnboardLanguageScreen({Key? key, this.pageController, this.pageCount})
       : super(key: key);

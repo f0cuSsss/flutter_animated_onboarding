@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class OnboardBottomBlock extends StatelessWidget {
   OnboardBottomBlock({this.pageController, this.pageCount, this.curPage});
 
