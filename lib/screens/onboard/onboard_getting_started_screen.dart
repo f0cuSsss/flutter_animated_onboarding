@@ -10,7 +10,7 @@ class OnboardGettingStartedScreen extends StatelessWidget {
   var pageCount;
 
   void getStartedHandler() {
-    print('Get started button clicked!');
+    print('Get started button clicked!!!');
   }
 
   @override
