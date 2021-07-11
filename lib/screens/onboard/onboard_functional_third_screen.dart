@@ -4,6 +4,7 @@ import 'package:flutter_welcome_screen/screens/onboard/onboard_bottom_block.dart
 
 import 'package:flutter_welcome_screen/generated/l10n.dart';
 
+// ignore: must_be_immutable
 class OnboardFunctionalThirdScreen extends StatelessWidget {
   OnboardFunctionalThirdScreen({this.pageController, this.pageCount});
 
