@@ -43,12 +43,21 @@ ThemeData appThemeLight = ThemeData(
     // ignore: prefer_const_constructors
     headline1: TextStyle(
       // ignore: prefer_const_constructors
-      color: Color(0xFF03002D),
+      color: const Color(0xFF03002D),
       fontFamily: 'Roboto',
       fontSize: 36,
       fontWeight: FontWeight.w900,
       height: 1.5,
       letterSpacing: 0.5,
+    ),
+    headline4: TextStyle(
+      color: const Color(0xFF03002D),
+      fontSize: 18,
+    ),
+    headline5: TextStyle(
+      color: Colors.black.withOpacity(0.5),
+      fontWeight: FontWeight.w500,
+      fontSize: 16,
     ),
   ),
   fontFamily: 'IBM Plex Sans',
@@ -62,7 +71,7 @@ ThemeData appThemeDark = ThemeData(
   primaryColor: const Color(0xFFEFF3F8),
   colorScheme: ColorScheme(
     // text color
-    primary: const Color(0xFFEFF3F8), // or Colors.white
+    primary: const Color(0xFFE1E5E9), // or Colors.white
     // text color
     primaryVariant: const Color(0xFF03002D), // or Colors.black
     // accent color
@@ -93,6 +102,15 @@ ThemeData appThemeDark = ThemeData(
       fontWeight: FontWeight.w900,
       height: 1.5,
       letterSpacing: 0.5,
+    ),
+    headline4: TextStyle(
+      color: const Color(0xFFFFF3F8),
+      fontSize: 18,
+    ),
+    headline5: TextStyle(
+      color: Colors.white.withOpacity(0.5),
+      fontWeight: FontWeight.w500,
+      fontSize: 16,
     ),
   ),
   fontFamily: 'IBM Plex Sans',

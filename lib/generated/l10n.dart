@@ -250,6 +250,96 @@ class S {
     );
   }
 
+  /// `I have read and accept the `
+  String get getstarted_screen_privacy_policy_text_p1 {
+    return Intl.message(
+      'I have read and accept the ',
+      name: 'getstarted_screen_privacy_policy_text_p1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Terms of Use`
+  String get getstarted_screen_privacy_policy_text_p2 {
+    return Intl.message(
+      'Terms of Use',
+      name: 'getstarted_screen_privacy_policy_text_p2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` and `
+  String get getstarted_screen_privacy_policy_text_p3 {
+    return Intl.message(
+      ' and ',
+      name: 'getstarted_screen_privacy_policy_text_p3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Privacy Policy`
+  String get getstarted_screen_privacy_policy_text_p4 {
+    return Intl.message(
+      'Privacy Policy',
+      name: 'getstarted_screen_privacy_policy_text_p4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` before using the product.`
+  String get getstarted_screen_privacy_policy_text_p5 {
+    return Intl.message(
+      ' before using the product.',
+      name: 'getstarted_screen_privacy_policy_text_p5',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Personal data processing policy`
+  String get privacy_policy_title {
+    return Intl.message(
+      'Personal data processing policy',
+      name: 'privacy_policy_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `1. General Provisions\nThis personal data processing policy has been drawn up in accordance with the requirements of the Federal Law of July 27, 2006. № 152-ФЗ "On personal data" (hereinafter referred to as the Law on Personal Data) and determines the procedure for processing personal data and measures to ensure the security of personal data taken by tangram (hereinafter referred to as the Operator).\n1.1. The operator sets as its most important goal and condition for the implementation of its activities the observance of human and civil rights and freedoms when processing their personal data, including the protection of the rights to privacy, personal and family secrets.\n1.2. This Operator's policy regarding the processing of personal data (hereinafter referred to as the Policy) applies to all information that the Operator can obtain about visitors to the website https: // flutter-onboarding.\n1. General Provisions\nThis personal data processing policy has been drawn up in accordance with the requirements of the Federal Law of July 27, 2006. № 152-ФЗ "On personal data" (hereinafter referred to as the Law on Personal Data) and determines the procedure for processing personal data and measures to ensure the security of personal data taken by tangram (hereinafter referred to as the Operator).\n1.1. The operator sets as its most important goal and condition for the implementation of its activities the observance of human and civil rights and freedoms when processing their personal data, including the protection of the rights to privacy, personal and family secrets.\n1.2. This Operator's policy regarding the processing of personal data (hereinafter referred to as the Policy) applies to all information that the Operator can obtain about visitors to the website https: // flutter-onboarding.\n1. General Provisions\nThis personal data processing policy has been drawn up in accordance with the requirements of the Federal Law of July 27, 2006. № 152-ФЗ "On personal data" (hereinafter referred to as the Law on Personal Data) and determines the procedure for processing personal data and measures to ensure the security of personal data taken by tangram (hereinafter referred to as the Operator).\n1.1. The operator sets as its most important goal and condition for the implementation of its activities the observance of human and civil rights and freedoms when processing their personal data, including the protection of the rights to privacy, personal and family secrets.\n1.2. This Operator's policy regarding the processing of personal data (hereinafter referred to as the Policy) applies to all information that the Operator can obtain about visitors to the website https: // flutter-onboarding.`
+  String get privacy_policy_text {
+    return Intl.message(
+      '1. General Provisions\nThis personal data processing policy has been drawn up in accordance with the requirements of the Federal Law of July 27, 2006. № 152-ФЗ "On personal data" (hereinafter referred to as the Law on Personal Data) and determines the procedure for processing personal data and measures to ensure the security of personal data taken by tangram (hereinafter referred to as the Operator).\n1.1. The operator sets as its most important goal and condition for the implementation of its activities the observance of human and civil rights and freedoms when processing their personal data, including the protection of the rights to privacy, personal and family secrets.\n1.2. This Operator\'s policy regarding the processing of personal data (hereinafter referred to as the Policy) applies to all information that the Operator can obtain about visitors to the website https: // flutter-onboarding.\n1. General Provisions\nThis personal data processing policy has been drawn up in accordance with the requirements of the Federal Law of July 27, 2006. № 152-ФЗ "On personal data" (hereinafter referred to as the Law on Personal Data) and determines the procedure for processing personal data and measures to ensure the security of personal data taken by tangram (hereinafter referred to as the Operator).\n1.1. The operator sets as its most important goal and condition for the implementation of its activities the observance of human and civil rights and freedoms when processing their personal data, including the protection of the rights to privacy, personal and family secrets.\n1.2. This Operator\'s policy regarding the processing of personal data (hereinafter referred to as the Policy) applies to all information that the Operator can obtain about visitors to the website https: // flutter-onboarding.\n1. General Provisions\nThis personal data processing policy has been drawn up in accordance with the requirements of the Federal Law of July 27, 2006. № 152-ФЗ "On personal data" (hereinafter referred to as the Law on Personal Data) and determines the procedure for processing personal data and measures to ensure the security of personal data taken by tangram (hereinafter referred to as the Operator).\n1.1. The operator sets as its most important goal and condition for the implementation of its activities the observance of human and civil rights and freedoms when processing their personal data, including the protection of the rights to privacy, personal and family secrets.\n1.2. This Operator\'s policy regarding the processing of personal data (hereinafter referred to as the Policy) applies to all information that the Operator can obtain about visitors to the website https: // flutter-onboarding.',
+      name: 'privacy_policy_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Terms of use`
+  String get terms_of_use_title {
+    return Intl.message(
+      'Terms of use',
+      name: 'terms_of_use_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `1. General Provisions\nThis personal data processing policy has been drawn up in accordance with the requirements of the Federal Law of July 27, 2006. № 152-ФЗ "On personal data" (hereinafter referred to as the Law on Personal Data) and determines the procedure for processing personal data and measures to ensure the security of personal data taken by tangram (hereinafter referred to as the Operator).\n1.1. The operator sets as its most important goal and condition for the implementation of its activities the observance of human and civil rights and freedoms when processing their personal data, including the protection of the rights to privacy, personal and family secrets.\n1.2. This Operator's policy regarding the processing of personal data (hereinafter referred to as the Policy) applies to all information that the Operator can obtain about visitors to the website https: // flutter-onboarding.\n1. General Provisions\nThis personal data processing policy has been drawn up in accordance with the requirements of the Federal Law of July 27, 2006. № 152-ФЗ "On personal data" (hereinafter referred to as the Law on Personal Data) and determines the procedure for processing personal data and measures to ensure the security of personal data taken by tangram (hereinafter referred to as the Operator).\n1.1. The operator sets as its most important goal and condition for the implementation of its activities the observance of human and civil rights and freedoms when processing their personal data, including the protection of the rights to privacy, personal and family secrets.\n1.2. This Operator's policy regarding the processing of personal data (hereinafter referred to as the Policy) applies to all information that the Operator can obtain about visitors to the website https: // flutter-onboarding.\n1. General Provisions\nThis personal data processing policy has been drawn up in accordance with the requirements of the Federal Law of July 27, 2006. № 152-ФЗ "On personal data" (hereinafter referred to as the Law on Personal Data) and determines the procedure for processing personal data and measures to ensure the security of personal data taken by tangram (hereinafter referred to as the Operator).\n1.1. The operator sets as its most important goal and condition for the implementation of its activities the observance of human and civil rights and freedoms when processing their personal data, including the protection of the rights to privacy, personal and family secrets.\n1.2. This Operator's policy regarding the processing of personal data (hereinafter referred to as the Policy) applies to all information that the Operator can obtain about visitors to the website https: // flutter-onboarding.`
+  String get terms_of_use_text {
+    return Intl.message(
+      '1. General Provisions\nThis personal data processing policy has been drawn up in accordance with the requirements of the Federal Law of July 27, 2006. № 152-ФЗ "On personal data" (hereinafter referred to as the Law on Personal Data) and determines the procedure for processing personal data and measures to ensure the security of personal data taken by tangram (hereinafter referred to as the Operator).\n1.1. The operator sets as its most important goal and condition for the implementation of its activities the observance of human and civil rights and freedoms when processing their personal data, including the protection of the rights to privacy, personal and family secrets.\n1.2. This Operator\'s policy regarding the processing of personal data (hereinafter referred to as the Policy) applies to all information that the Operator can obtain about visitors to the website https: // flutter-onboarding.\n1. General Provisions\nThis personal data processing policy has been drawn up in accordance with the requirements of the Federal Law of July 27, 2006. № 152-ФЗ "On personal data" (hereinafter referred to as the Law on Personal Data) and determines the procedure for processing personal data and measures to ensure the security of personal data taken by tangram (hereinafter referred to as the Operator).\n1.1. The operator sets as its most important goal and condition for the implementation of its activities the observance of human and civil rights and freedoms when processing their personal data, including the protection of the rights to privacy, personal and family secrets.\n1.2. This Operator\'s policy regarding the processing of personal data (hereinafter referred to as the Policy) applies to all information that the Operator can obtain about visitors to the website https: // flutter-onboarding.\n1. General Provisions\nThis personal data processing policy has been drawn up in accordance with the requirements of the Federal Law of July 27, 2006. № 152-ФЗ "On personal data" (hereinafter referred to as the Law on Personal Data) and determines the procedure for processing personal data and measures to ensure the security of personal data taken by tangram (hereinafter referred to as the Operator).\n1.1. The operator sets as its most important goal and condition for the implementation of its activities the observance of human and civil rights and freedoms when processing their personal data, including the protection of the rights to privacy, personal and family secrets.\n1.2. This Operator\'s policy regarding the processing of personal data (hereinafter referred to as the Policy) applies to all information that the Operator can obtain about visitors to the website https: // flutter-onboarding.',
+      name: 'terms_of_use_text',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `SKIP`
   String get skip {
     return Intl.message(

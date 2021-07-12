@@ -14,9 +14,6 @@ void main() => runApp(App());
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // final w = ThemeBloc(initialState: appThemeData[AppTheme.Light]);
-    // ThemeData state = appThemeData[AppTheme.Light];
-
     return ChangeNotifierProvider(
       create: (_) => ThemeNotifier(),
       child: Consumer<ThemeNotifier>(

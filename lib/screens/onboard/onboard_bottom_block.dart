@@ -28,7 +28,7 @@ class OnboardBottomBlock extends StatelessWidget {
                   splashColor: (() {
                     return curPage == 0
                         ? Colors.transparent
-                        : Color(0xFF8093F1);
+                        : theme.colorScheme.secondary.withOpacity(0.5);
                   }()),
                   icon: Icon(
                     Icons.arrow_back,
@@ -51,7 +51,7 @@ class OnboardBottomBlock extends StatelessWidget {
                 decoration: ShapeDecoration(
                   shape: CircleBorder(),
                   color: curPage == pageCount - 1
-                      ? theme.colorScheme.background
+                      ? Colors.transparent
                       : theme.colorScheme.secondary,
                 ),
                 padding: EdgeInsets.all(10),
@@ -59,7 +59,7 @@ class OnboardBottomBlock extends StatelessWidget {
                   splashColor: (() {
                     return curPage == pageCount - 1
                         ? Colors.transparent
-                        : Color(0xFF8093F1);
+                        : theme.colorScheme.secondary.withOpacity(0.5);
                   }()),
                   icon: Icon(
                     Icons.arrow_forward,

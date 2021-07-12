@@ -13,10 +13,11 @@ class OnboardFunctionalOverviewScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Stack(children: [
       Positioned(
         top: 25,
-        right: 20,
+        right: 5,
         child: GestureDetector(
           onTap: () => (pageController as PageController).animateToPage(
             pageCount - 1,
@@ -27,22 +28,19 @@ class OnboardFunctionalOverviewScreen extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Text(
               S.of(context).skip,
-              style: TextStyle(
-                color: Colors.black.withOpacity(0.5),
-                fontWeight: FontWeight.w500,
-              ),
+              style: theme.textTheme.headline5,
             ),
           ),
         ),
       ),
       Padding(
-        padding: const EdgeInsets.only(top: 70, bottom: 5, left: 5, right: 5),
+        padding: const EdgeInsets.only(top: 50, bottom: 5, left: 5, right: 5),
         child: Column(
           children: [
             Image.asset(
               'assets/onboarding/functional_overview.png',
               fit: BoxFit.fill,
-              height: MediaQuery.of(context).size.height * 0.35,
+              height: MediaQuery.of(context).size.height * 0.3,
             ),
             SizedBox(height: 20),
             Padding(
@@ -50,14 +48,7 @@ class OnboardFunctionalOverviewScreen extends StatelessWidget {
               child: Text(
                 S.of(context).func_overview_screen_title,
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Color(0xFF03002D),
-                  fontFamily: 'Roboto',
-                  fontSize: 36,
-                  fontWeight: FontWeight.w900,
-                  height: 1.5,
-                  letterSpacing: 0.5,
-                ),
+                style: theme.textTheme.headline1,
               ),
             ),
             SizedBox(height: 30),
@@ -70,12 +61,12 @@ class OnboardFunctionalOverviewScreen extends StatelessWidget {
                   scrollDirection: Axis.vertical,
                   child: Text(
                     S.of(context).func_overview_screen_description,
-                    style: TextStyle(fontSize: 18),
+                    style: theme.textTheme.headline4,
                   ),
                 ),
               ),
             )),
-            SizedBox(height: 30),
+            SizedBox(height: 10),
             OnboardBottomBlock(
               pageController: pageController,
               pageCount: pageCount,

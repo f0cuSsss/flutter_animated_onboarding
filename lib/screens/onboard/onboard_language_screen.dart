@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_welcome_screen/behaviors/NoneScrollBehavior.dart';
 import 'package:flutter_welcome_screen/screens/onboard/onboard_bottom_block.dart';
 
 import 'package:flutter_welcome_screen/generated/l10n.dart';
+import 'package:flutter_welcome_screen/utils/Prefs.dart';
+import 'package:flutter_welcome_screen/widgets/select_list_button.dart';
 
 class LanguageItem {
   final id;
@@ -34,7 +35,56 @@ class OnboardLanguageScreen extends StatefulWidget {
 }
 
 class _OnboardLanguageScreenState extends State<OnboardLanguageScreen> {
-  int selectedLanguage = 1;
+  int selectedLanguage = 0;
+  String key = "language_id";
+
+  List<LanguageItem> languages = [];
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    setState(() {
+      languages = [
+        LanguageItem(
+          id: 0,
+          name: S.of(context).language_screen_english,
+          path: 'assets/onboarding/us.svg',
+          code: 'en',
+          country: '',
+        ),
+        LanguageItem(
+          id: 1,
+          name: S.of(context).language_screen_german,
+          path: 'assets/onboarding/germany.svg',
+          code: 'de',
+          country: 'DE',
+        ),
+        LanguageItem(
+          id: 2,
+          name: S.of(context).language_screen_russian,
+          path: 'assets/onboarding/russia.svg',
+          code: 'ru',
+          country: 'RU',
+        ),
+        LanguageItem(
+          id: 3,
+          name: S.of(context).language_screen_ukrainian,
+          path: 'assets/onboarding/ukraine.svg',
+          code: 'uk',
+          country: 'UA',
+        ),
+      ];
+    });
+    loadLanguage();
+  }
+
+  loadLanguage() async {
+    int id = await Prefs().getInt(key);
+    setState(() {
+      selectedLanguage = id;
+    });
+    S.load(Locale(languages[id].code, languages[id].country));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,34 +105,7 @@ class _OnboardLanguageScreenState extends State<OnboardLanguageScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: ListView(
                   children: [
-                    _languageItem(LanguageItem(
-                      id: 1,
-                      name: S.of(context).language_screen_english,
-                      path: 'assets/onboarding/us.svg',
-                      code: 'en',
-                      country: '',
-                    )),
-                    _languageItem(LanguageItem(
-                      id: 2,
-                      name: S.of(context).language_screen_german,
-                      path: 'assets/onboarding/germany.svg',
-                      code: 'de',
-                      country: 'DE',
-                    )),
-                    _languageItem(LanguageItem(
-                      id: 3,
-                      name: S.of(context).language_screen_russian,
-                      path: 'assets/onboarding/russia.svg',
-                      code: 'ru',
-                      country: 'RU',
-                    )),
-                    _languageItem(LanguageItem(
-                      id: 4,
-                      name: S.of(context).language_screen_ukrainian,
-                      path: 'assets/onboarding/ukraine.svg',
-                      code: 'uk',
-                      country: 'UA',
-                    )),
+                    for (LanguageItem item in languages) _languageItem(item)
                   ],
                 ),
               ),
@@ -101,67 +124,20 @@ class _OnboardLanguageScreenState extends State<OnboardLanguageScreen> {
   }
 
   Widget _languageItem(LanguageItem item) {
-    var theme = Theme.of(context);
     return GestureDetector(
       onTap: () {
         setState(() {
           selectedLanguage = item.id;
+          Prefs().saveToPrefs(key, item.id);
           S.load(Locale(item.code, item.country));
         });
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 12),
-        child: Container(
-          decoration: BoxDecoration(
-            color: selectedLanguage == item.id
-                ? theme.primaryColor
-                : theme.colorScheme.surface,
-            // : const Color(0xFF060053),
-            borderRadius: const BorderRadius.all(Radius.circular(12)),
-          ),
-          width: double.infinity,
-          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 18),
-          child: Row(
-            children: [
-              SvgPicture.asset(
-                item.path,
-                height: 36,
-                width: 36,
-              ),
-              const SizedBox(width: 35),
-              Expanded(
-                child: Text(
-                  item.name,
-                  style: TextStyle(
-                    fontSize: 19,
-                    color: selectedLanguage == item.id
-                        ? theme.colorScheme.primaryVariant
-                        : theme.colorScheme.primary,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.all(5),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                    width: 1,
-                    color: Colors.grey.withOpacity(0.4),
-                  ),
-                  color: selectedLanguage == item.id
-                      ? theme.colorScheme.secondary
-                      : null,
-                ),
-                child: Icon(
-                  Icons.done,
-                  color: selectedLanguage == item.id
-                      ? theme.colorScheme.onSecondary
-                      : Colors.grey.withOpacity(0.4),
-                ),
-              ),
-            ],
-          ),
+        child: SelectListButton(
+          item: item,
+          selectedId: selectedLanguage,
+          withIcon: true,
         ),
       ),
     );

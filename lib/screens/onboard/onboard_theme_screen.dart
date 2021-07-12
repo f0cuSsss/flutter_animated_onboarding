@@ -7,7 +7,9 @@ import 'package:flutter_welcome_screen/global/theme/app_theme.dart';
 import 'package:flutter_welcome_screen/screens/onboard/onboard_bottom_block.dart';
 
 import 'package:flutter_welcome_screen/generated/l10n.dart';
+import 'package:flutter_welcome_screen/widgets/select_list_button.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ThemeItem {
   final id;
@@ -28,7 +30,21 @@ class OnboardThemeScreen extends StatefulWidget {
 }
 
 class _OnboardThemeScreenState extends State<OnboardThemeScreen> {
-  int selectedTheme = 1;
+  int selectedTheme = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    loadCurrentTheme();
+  }
+
+  void loadCurrentTheme() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    int theme_id = prefs.getInt('theme_id') ?? 0;
+    setState(() {
+      selectedTheme = theme_id;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,14 +70,14 @@ class _OnboardThemeScreenState extends State<OnboardThemeScreen> {
                   children: [
                     _themeItem(
                       ThemeItem(
-                        id: 1,
+                        id: 0,
                         name: S.of(context).theme_screen_light,
                       ),
                       AppTheme.Light,
                     ),
                     _themeItem(
                       ThemeItem(
-                        id: 2,
+                        id: 1,
                         name: S.of(context).theme_screen_dark,
                       ),
                       AppTheme.Dark,
@@ -94,50 +110,10 @@ class _OnboardThemeScreenState extends State<OnboardThemeScreen> {
         },
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 12),
-          child: Container(
-            decoration: BoxDecoration(
-              color: selectedTheme == item.id
-                  ? const Color(0xFF03002D)
-                  : Colors.white,
-              borderRadius: const BorderRadius.all(Radius.circular(12)),
-            ),
-            width: double.infinity,
-            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 18),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    item.name,
-                    style: TextStyle(
-                      fontSize: 19,
-                      color: selectedTheme == item.id
-                          ? Colors.white
-                          : Colors.black,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ),
-                Container(
-                  padding: const EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(
-                      width: 1,
-                      color: Colors.grey.withOpacity(0.4),
-                    ),
-                    color: selectedTheme == item.id
-                        ? const Color(0xFF6338F2)
-                        : null,
-                  ),
-                  child: Icon(
-                    Icons.done,
-                    color: selectedTheme == item.id
-                        ? Colors.white
-                        : Colors.grey.withOpacity(0.4),
-                  ),
-                ),
-              ],
-            ),
+          child: SelectListButton(
+            item: item,
+            selectedId: selectedTheme,
+            withIcon: false,
           ),
         ),
       ),

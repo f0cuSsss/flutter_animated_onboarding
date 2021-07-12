@@ -13,10 +13,11 @@ class OnboardFunctionalThirdScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Stack(children: [
       Positioned(
         top: 25,
-        right: 20,
+        right: 5,
         child: GestureDetector(
           onTap: () => (pageController as PageController).animateToPage(
             pageCount - 1,
@@ -27,16 +28,13 @@ class OnboardFunctionalThirdScreen extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Text(
               S.of(context).skip,
-              style: TextStyle(
-                color: Colors.black.withOpacity(0.5),
-                fontWeight: FontWeight.w500,
-              ),
+              style: theme.textTheme.headline5,
             ),
           ),
         ),
       ),
       Padding(
-        padding: const EdgeInsets.only(top: 70, bottom: 5, left: 5, right: 5),
+        padding: const EdgeInsets.only(top: 50, bottom: 5, left: 5, right: 5),
         child: Column(
           children: [
             Image.asset(
@@ -47,18 +45,9 @@ class OnboardFunctionalThirdScreen extends StatelessWidget {
             const SizedBox(height: 30),
             Padding(
               padding: const EdgeInsets.only(left: 30, right: 30),
-              child: Text(
-                S.of(context).func_third_screen_title,
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  color: Color(0xFF03002D),
-                  fontFamily: 'Roboto',
-                  fontSize: 36,
-                  fontWeight: FontWeight.w900,
-                  height: 1.5,
-                  letterSpacing: 0.5,
-                ),
-              ),
+              child: Text(S.of(context).func_third_screen_title,
+                  textAlign: TextAlign.center,
+                  style: theme.textTheme.headline1),
             ),
             const SizedBox(height: 30),
             Expanded(
@@ -70,12 +59,12 @@ class OnboardFunctionalThirdScreen extends StatelessWidget {
                   scrollDirection: Axis.vertical,
                   child: Text(
                     S.of(context).func_third_screen_description,
-                    style: const TextStyle(fontSize: 18),
+                    style: theme.textTheme.headline4,
                   ),
                 ),
               ),
             )),
-            const SizedBox(height: 30),
+            const SizedBox(height: 10),
             OnboardBottomBlock(
               pageController: pageController,
               pageCount: pageCount,
