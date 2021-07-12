@@ -26,7 +26,6 @@ class _OnboardGettingStartedScreenState
   void getStartedHandler() {
     if (!isTermsAndPoliticsAccepted) return;
     print('Get started button clicked!');
-    // print(S.of(this.context).func_first_screen_description);
   }
 
   Color getColor(Set<MaterialState> states) {
