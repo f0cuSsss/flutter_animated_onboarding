@@ -43,6 +43,11 @@ class _OnboardLanguageScreenState extends State<OnboardLanguageScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
+    _updateLanguages();
+    loadLanguage();
+  }
+
+  void _updateLanguages() {
     setState(() {
       languages = [
         LanguageItem(
@@ -75,7 +80,6 @@ class _OnboardLanguageScreenState extends State<OnboardLanguageScreen> {
         ),
       ];
     });
-    loadLanguage();
   }
 
   loadLanguage() async {
@@ -88,6 +92,7 @@ class _OnboardLanguageScreenState extends State<OnboardLanguageScreen> {
 
   @override
   Widget build(BuildContext context) {
+    _updateLanguages();
     return Padding(
       padding: const EdgeInsets.only(top: 70, bottom: 5, left: 5, right: 5),
       child: Column(
